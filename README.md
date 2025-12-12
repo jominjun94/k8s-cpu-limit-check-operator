@@ -1,9 +1,7 @@
 # CPU Reaper Operator
 
-CPU Reaper Operator는 Kubernetes 클러스터에서 실행 중인 Pod의 CPU 사용률을
-metrics.k8s.io API를 통해 주기적으로 확인하고,
-설정된 임계치를 초과한 Pod를 자동으로 삭제하여
-Deployment, ReplicaSet 등에 의해 Pod가 재생성되도록 유도하는 Operator입니다.
+CPU Reaper Operator는 Kubernetes 클러스터에서 실행 중인 Pod의 CPU 사용률을 metrics.k8s.io API를 통해 주기적으로 확인하고,
+설정된 임계치를 초과한 Pod를 자동으로 삭제하여 Deployment, ReplicaSet 등에 의해 Pod가 재생성되도록 유도하는 Operator입니다.
 
 CPU limit은 컨테이너를 종료하지 않고 throttling만 수행하기 때문에
 CPU 과다 사용 상태에서도 Pod는 Running 상태로 유지될 수 있으며,
@@ -41,8 +39,9 @@ CPU Reaper Operator는 이러한 한계를 보완하기 위해 설계되었습�
 ---
 
 ## 설치 방법 
+```
 kubectl apply -f https://raw.githubusercontent.com/jominjun94/k8s-cpu-limit-check-operator/main/dist/install.yaml
-
+```
 ---
 
 ## 정책 생성 (CpuReaperPolicy)
@@ -62,7 +61,9 @@ spec:
 ```
 ---
 ## 적용
+```
 kubectl apply -f cpureaperpolicy.yaml
+```
 ```
 테스트용 CPU 부하 Pod
 apiVersion: apps/v1
@@ -96,13 +97,18 @@ spec:
 ```
 ---
 ## 동작 확인
+```
 kubectl logs -n cpu-reaper-system deploy/cpu-reaper-operator-controller-manager
-
+```
 ---
 ## 제거
+```
 1. kubectl delete cpureaperpolicy cpu-reaper -n default
 2. make undeploy
 3. make uninstall
+```
 ---
 ## 컨테이너 이미지
-jominjun/cpu-reaper-operator:v0.1.0
+```
+jominjun/cpu-reaper-operator:v0.1.0 (public docker registry)
+```
