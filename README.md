@@ -1,3 +1,7 @@
+## 👨‍💻 작성자 조민준 
+- GitHub: https://github.com/jominjun94/k8s-cpu-limit-check-operator
+- docker registry: https://hub.docker.com/repository/docker/jominjun/cpu-reaper-operator
+---
 # CPU Reaper Operator
 
 CPU Reaper Operator는 Kubernetes 클러스터에서 실행 중인 Pod의 CPU 사용률을 metrics.k8s.io API를 통해 주기적으로 확인하고,
@@ -116,6 +120,4 @@ make install
 make run
 ```
 
-## 👨‍💻 작성자
-- GitHub: https://github.com/jominjun94
-- Project: https://github.com/jominjun94/k8s-cpu-limit-check-operator
+
