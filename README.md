@@ -10,7 +10,7 @@ CPU Reaper Operator는 이러한 한계를 보완하기 위해 설계되었습�
 
 ---
 
-## 주요 기능
+## 📌 주요 기능
 
 - Pod CPU 사용률 모니터링
 - CPU Limit(또는 Request)을 기준으로 사용률 계산
@@ -20,7 +20,7 @@ CPU Reaper Operator는 이러한 한계를 보완하기 위해 설계되었습�
 
 ---
 
-## 동작 개요
+## 📌 동작 개요
 
 1. 사용자가 `CpuReaperPolicy` 리소스를 생성합니다.
 2. Controller는 주기적으로 정책을 Reconcile 합니다.
@@ -32,19 +32,22 @@ CPU Reaper Operator는 이러한 한계를 보완하기 위해 설계되었습�
 
 ---
 
-## 사전 요구 사항
+## 📌 사전 요구 사항
 
-- Kubernetes 클러스터
-- metrics-server 설치 필수
+- Kubernetes v1.23+
+- metrics-server 필수
+- kubectl get apiservices | grep metrics.k8s.io
+- Go v1.21+ (개발 시)
+
 ---
 
-## 설치 방법 
+## 🚀 설치 방법 
 ```
 kubectl apply -f https://raw.githubusercontent.com/jominjun94/k8s-cpu-limit-check-operator/main/dist/install.yaml
 ```
 ---
 
-## 정책 생성 (CpuReaperPolicy)
+## 🔬 정책 생성 Custom Resource 정의 (CpuReaperPolicy)
 ```
 apiVersion: reaper.cpu.limit.check/v1alpha1
 kind: CpuReaperPolicy
@@ -60,7 +63,7 @@ spec:
   checkIntervalSeconds: 10
 ```
 ---
-## 적용
+## 📈 적용
 ```
 kubectl apply -f cpureaperpolicy.yaml
 ```
@@ -96,19 +99,23 @@ spec:
             cpu: "100m"
 ```
 ---
-## 동작 확인
+## ⚙️ 동작 확인
 ```
 kubectl logs -n cpu-reaper-system deploy/cpu-reaper-operator-controller-manager
 ```
+
 ---
-## 제거
-```
-1. kubectl delete cpureaperpolicy cpu-reaper -n default
-2. make undeploy
-3. make uninstall
-```
----
-## 컨테이너 이미지
+## 🐳컨테이너 이미지
 ```
 jominjun/cpu-reaper-operator:v0.1.0 (public docker registry)
 ```
+
+## 🧪 로컬 개발 모드
+```
+make install
+make run
+```
+
+## 👨‍💻 작성자
+- GitHub: https://github.com/jominjun94
+- Project: https://github.com/jominjun94/k8s-cpu-limit-check-operator
