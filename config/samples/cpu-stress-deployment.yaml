@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-stress
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress
+  template:
+    metadata:
+      labels:
+        app: stress
+    spec:
+      containers:
+      - name: stress
+        image: busybox
+        command:
+        - sh
+        - -c
+        - "while true; do :; done"
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            cpu: "100m"
+

@@ -1,0 +1,13 @@
+apiVersion: reaper.cpu.limit.check/v1alpha1
+kind: CpuReaperPolicy
+metadata:
+  name: cpu-reaper
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: stress
+  thresholdPercent: 100
+  forSeconds: 30
+  checkIntervalSeconds: 10
+

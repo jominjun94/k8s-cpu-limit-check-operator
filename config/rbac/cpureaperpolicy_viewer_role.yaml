@@ -1,0 +1,23 @@
+# permissions for end users to view cpureaperpolicies.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: cpu-reaper-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: cpureaperpolicy-viewer-role
+rules:
+- apiGroups:
+  - reaper.cpu.limit.check
+  resources:
+  - cpureaperpolicies
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - reaper.cpu.limit.check
+  resources:
+  - cpureaperpolicies/status
+  verbs:
+  - get
