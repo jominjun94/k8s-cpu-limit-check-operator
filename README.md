@@ -2,7 +2,9 @@
 - GitHub: https://github.com/jominjun94/k8s-cpu-limit-check-operator
 - docker registry: https://hub.docker.com/repository/docker/jominjun/cpu-reaper-operator
 ---
-# CPU Reaper Operator
+# CPU Reaper Operator + Chatgpt 활용
+
+해당 구성은 Chatgpt를 활용하여 코드를 작성하였습니다.
 
 CPU Reaper Operator는 Kubernetes 클러스터에서 실행 중인 Pod의 CPU 사용률을 metrics.k8s.io API를 통해 주기적으로 확인하고,
 설정된 임계치를 초과한 Pod를 자동으로 삭제하여 Deployment, ReplicaSet 등에 의해 Pod가 재생성되도록 유도하는 Operator입니다.
