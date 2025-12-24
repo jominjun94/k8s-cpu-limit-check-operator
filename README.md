@@ -64,12 +64,8 @@ spec:
   checkIntervalSeconds: 10 #CPU 사용량 체크 주기 10초
 ```
 ---
-## 📈 적용
+## 📈 테스트용 CPU 부하 Pod
 ```
-kubectl apply -f cpureaperpolicy.yaml
-```
-```
-테스트용 CPU 부하 Pod
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -99,9 +95,6 @@ spec:
           limits:
             cpu: "100m"
 ```
----
-
-
 ---
 ## 🐳컨테이너 이미지
 ```
