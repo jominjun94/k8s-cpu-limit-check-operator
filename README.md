@@ -58,7 +58,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app: stress
+      app: stress # 라벨이 달린 dpeloyment를 확인
   thresholdPercent: 100 # CPU 사용률 기준 (%) -> (실제 CPU 사용량 / CPU limit) × 100 
   forSeconds: 30 # 순간 치는 걸 제외하기 위한 30초간 지속적으로 초과 되는지 확인
   checkIntervalSeconds: 10 #CPU 사용량 체크 주기 10초
