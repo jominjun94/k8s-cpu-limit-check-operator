@@ -47,11 +47,6 @@ CPU Reaper Operator는 이러한 한계를 보완하기 위해 설계되었습�
 
 ---
 
-## 🚀 설치 방법 
-```
-kubectl apply -f https://raw.githubusercontent.com/jominjun94/k8s-cpu-limit-check-operator/main/dist/install.yaml
-```
----
 
 ## 🔬 정책 생성 Custom Resource 정의 (CpuReaperPolicy)
 ```
