@@ -100,10 +100,7 @@ spec:
             cpu: "100m"
 ```
 ---
-## ⚙️ 동작 확인
-```
-kubectl logs -n cpu-reaper-system deploy/cpu-reaper-operator-controller-manager
-```
+
 
 ---
 ## 🐳컨테이너 이미지
