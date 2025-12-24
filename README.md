@@ -59,9 +59,9 @@ spec:
   podSelector:
     matchLabels:
       app: stress
-  thresholdPercent: 100
-  forSeconds: 30
-  checkIntervalSeconds: 10
+  thresholdPercent: 100 # CPU 사용률 기준 (%) -> (실제 CPU 사용량 / CPU limit) × 100 
+  forSeconds: 30 # 순간 치는 걸 제외하기 위한 30초간 지속적으로 초과 되는지 확인
+  checkIntervalSeconds: 10 #CPU 사용량 체크 주기 10초
 ```
 ---
 ## 📈 적용
